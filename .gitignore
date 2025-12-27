@@ -1,13 +1,19 @@
-cat << EOF > .gitignore
 venv/
 __pycache__/
 *.pyc
 .env
+
+# Data (training only)
 data/raw/*
 data/processed/*
-models/
-*.joblib
-*.pkl
+
+# Ignore all models by default
+models/*
+
+# ✅ BUT allow production baseline model
+!models/baseline/
+!models/baseline/best_baseline_model.joblib
+
+# OS / misc
 .DS_Store
 .ipynb_checkpoints/
-EOF
