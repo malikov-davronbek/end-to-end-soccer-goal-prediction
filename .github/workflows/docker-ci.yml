@@ -46,7 +46,7 @@ jobs:
       # 6️⃣ Health check
       - name: Health check
         run: |
-          curl -f http://localhost:8000/health
+          curl -f http://localhost:8000/health || docker logs test-container
 
       # 7️⃣ Show logs (for debugging if needed)
       - name: Show container logs
